@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><!-- saved from url=(0014)about:internet --><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" href="../../../style.css" type="text/css" media="screen"><link rel="stylesheet" href="../../../print.css" type="text/css" media="print"><link rel="stylesheet" href="../../../override.css" type="text/css"><meta name="keywords" content="NetManager,taptabcontroller.net.core.NetManager,CONNECTED,DEFAULT_GROUP,DEFAULT_PORT,DISCONNECTED,MESSAGE_RECEIVED,NEW_PEER,PEER_LEAVE,TAPTAB_CLIENT,TAPTAB_CONTROLLER,TYPE_MESSAGE,TYPE_QUIT,TYPE_SET_ACTIVATED,TYPE_SET_DEACTIVATED,TYPE_SYSTEM_ACCEPT_BINDING,TYPE_SYSTEM_CANCEL_REQUEST_BINDING,TYPE_SYSTEM_IDENTIFY,TYPE_SYSTEM_PING,TYPE_SYSTEM_PONG,TYPE_SYSTEM_REQUEST_BINDING,_apiVersion,_applicationBitmap,_connected,_name,_netManager,_type,apiVersion,applicationBitmap,connected,connected,content,from,id,instance,message,name,name,neighbors,peerID,peerID,to,type,type,Parse,_handler_NetManager,_identifyMyselfToPeer,_ping,_pong,_refreshPeers,convertPeerIDToGroupAddress,getByName,refreshPeers,sendMessageTo,sendMessageTo,start,start,stop,stop"><title>taptabcontroller.net.core.NetManager</title></head><body><script language="javascript" type="text/javascript" src="../../../asdoc.js"></script><script language="javascript" type="text/javascript" src="../../../help.js"></script><script language="javascript" type="text/javascript" src="../../../cookies.js"></script><script language="javascript" type="text/javascript"><!--
+				asdocTitle = 'NetManager - TapTab Controller AS3 API';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<script type="text/javascript">
+			scrollToNameAnchor();
+		</script><table class="titleTable" cellpadding="0" cellspacing="0" id="titleTable" style="display:none"><tr><td class="titleTableTitle" align="left">API Documentation</td><td class="titleTableTopNav" align="right"><a href="../../../package-summary.html" onclick="loadClassListFrame('../../../all-classes.html')">All Packages</a>&nbsp;|&nbsp;<a href="../../../class-summary.html" onclick="loadClassListFrame('../../../all-classes.html')">All Classes</a>&nbsp;|&nbsp;<a href="../../../all-index-A.html" onclick="loadClassListFrame('../../../index-list.html')">Index</a>&nbsp;|&nbsp;<a id="framesLink1" href="../../../index.html?taptabcontroller/net/core/NetManager.html&amp;taptabcontroller/net/core/class-list.html">Frames</a><a id="noFramesLink1" style="display:none" href="" onclick="parent.location=document.location"> No Frames </a></td><td class="titleTableLogo" align="right" rowspan="3"><img src="../../../images/logo.jpg" class="logoImage" alt="AdobeLogo" title="AdobeLogo"></td></tr><tr class="titleTableRow2"><td class="titleTableSubTitle" id="subTitle" align="left">NetManager</td><td class="titleTableSubNav" id="subNav" align="right"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a>&nbsp;| <a href="#constantSummary">Constants</a></td></tr><tr class="titleTableRow3"><td colspan="3">&nbsp;</td></tr></table><script language="javascript" type="text/javascript" xml:space="preserve">
+				<!--
+				
+					if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("NetManager"); titleBar_setSubNav(true,true,false,false,false,false,false,false,true,false,false	,false,false,false,false,false);}	
+				-->
+			</script><div xmlns:fn="http://www.w3.org/2005/xpath-functions" class="MainContent"><table class="classHeaderTable" cellpadding="0" cellspacing="0"><tr><td class="classHeaderTableLabel">Package</td><td><a href="package-detail.html" onclick="javascript:loadClassListFrame('class-list.html')">taptabcontroller.net.core</a></td></tr><tr><td class="classHeaderTableLabel">Class</td><td class="classSignature">public  class  NetManager</td></tr><tr><td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">NetManager  <img src="../../../images/inherit-arrow.gif" title="Inheritance" alt="Inheritance" class="inheritArrow"> flash.events.EventDispatcher</td></tr></table><p></p><p></p><p></p><p></p>
+	 
+	 The NetManager SingleTon lets you connect to the local
+	 network and in a NetGroup. 
+	 Then you are able to connect to other NetGroup peers.
+	 
+	 <p></p><br/><hr></div><a name="propertySummary"></a><div class="summarySection"><div class="summaryTableTitle">Public Properties</div><table cellspacing="0" cellpadding="3" class="summaryTable " id="summaryTableProperty"><tr><th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined By</th></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#connected" class="signatureLink">connected</a> : Boolean<div class="summaryTableDescription">[read-only] 
+		 
+		 </div></td><td class="summaryTableOwnerCol">NetManager</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#instance" class="signatureLink">instance</a> : <a href="../../../taptabcontroller/net/core/NetManager.html">NetManager</a><div class="summaryTableDescription">[static] [read-only] 
+		 
+		 </div></td><td class="summaryTableOwnerCol">NetManager</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#neighbors" class="signatureLink">neighbors</a> : Vector.&lt;String&gt;<div class="summaryTableDescription">[read-only] 
+		 
+		 </div></td><td class="summaryTableOwnerCol">NetManager</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#peerID" class="signatureLink">peerID</a> : String<div class="summaryTableDescription">[read-only] 
+		 
+		 </div></td><td class="summaryTableOwnerCol">NetManager</td></tr></table></div><a name="methodSummary"></a><div class="summarySection"><div class="summaryTableTitle">Public Methods </div><table cellspacing="0" cellpadding="3" class="summaryTable " id="summaryTableMethod"><tr><th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined By</th></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#convertPeerIDToGroupAddress()" class="signatureLink">convertPeerIDToGroupAddress</a>(__peerId:String):String</div><div class="summaryTableDescription">
+		 
+		 convert peer ID to group address
+		 
+		 </div></td><td class="summaryTableOwnerCol">NetManager</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#sendMessageTo()" class="signatureLink">sendMessageTo</a>(__peerId:String, __type:String, __content:Object = null):void</div><div class="summaryTableDescription">
+		 		 Send a message to a peer in the NetGroup
+		  
+		 </div></td><td class="summaryTableOwnerCol">NetManager</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#start()" class="signatureLink">start</a>(__port:String, __groupName:String):void</div><div class="summaryTableDescription">
+		 		 Starts the NetManager, the connection to the LAN and the NetGroup
+		  
+		 </div></td><td class="summaryTableOwnerCol">NetManager</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#stop()" class="signatureLink">stop</a>():void</div><div class="summaryTableDescription">
+		 Stop the NetManager, disconnect from the LAN and NetGroup
+		 
+		 </div></td><td class="summaryTableOwnerCol">NetManager</td></tr></table></div><a name="constantSummary"></a><div class="summarySection"><div class="summaryTableTitle">Public Constants</div><table cellspacing="0" cellpadding="3" class="summaryTable " id="summaryTableConstant"><tr><th>&nbsp;</th><th colspan="2">Constant</th><th class="summaryTableOwnerCol">Defined By</th></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#DEFAULT_GROUP" class="signatureLink">DEFAULT_GROUP</a> : String = TapTabControllerGroup<div class="summaryTableDescription">[static] 
+		 the default group name 
+		 </div></td><td class="summaryTableOwnerCol">NetManager</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#DEFAULT_PORT" class="signatureLink">DEFAULT_PORT</a> : String = 3000<div class="summaryTableDescription">[static] 
+		 the default port 
+		 </div></td><td class="summaryTableOwnerCol">NetManager</td></tr></table></div><script language="javascript" type="text/javascript"><!--
+										showHideInherited();
+										--></script><div class="MainContent"><div class="detailSectionHeader">Property Detail</div><a name="propertyDetail"></a><a name="connected"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">connected</td><td class="detailHeaderType">property</td></tr></table><div class="detailBody"><code>connected:Boolean</code>&nbsp;&nbsp;[read-only] <p></p><p></p><p>
+		 
+		 </p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get connected():Boolean</code><br/></div><a name="propertyDetail"></a><a name="instance"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">instance</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>instance:<a href="../../../taptabcontroller/net/core/NetManager.html">NetManager</a></code>&nbsp;&nbsp;[read-only] <p></p><p></p><p>
+		 
+		 </p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public static function get instance():<a href="../../../taptabcontroller/net/core/NetManager.html">NetManager</a></code><br/></div><a name="propertyDetail"></a><a name="neighbors"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">neighbors</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>neighbors:Vector.&lt;String&gt;</code>&nbsp;&nbsp;[read-only] <p></p><p></p><p>
+		 
+		 </p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get neighbors():Vector.&lt;String&gt;</code><br/></div><a name="propertyDetail"></a><a name="peerID"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">peerID</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>peerID:String</code>&nbsp;&nbsp;[read-only] <p></p><p></p><p>
+		 
+		 </p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get peerID():String</code><br/></div><a name="methodDetail"></a><div class="detailSectionHeader">Method Detail</div><a name="convertPeerIDToGroupAddress()"></a><a name="convertPeerIDToGroupAddress(String)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">convertPeerIDToGroupAddress</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td></tr></table><div class="detailBody"><code> public function convertPeerIDToGroupAddress(__peerId:String):String</code><p></p><p></p><p>
+		 
+		 convert peer ID to group address
+		 
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">__peerId</span>:String</code> &mdash; the peer id to convert
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>String</code> &mdash; the group adress
+		 
+		 </td></tr></table></div><a name="sendMessageTo()"></a><a name="sendMessageTo(String,String,Object)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">sendMessageTo</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function sendMessageTo(__peerId:String, __type:String, __content:Object = null):void</code><p></p><p></p><p>
+		 		 Send a message to a peer in the NetGroup
+		  
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">__peerId</span>:String</code> &mdash; the id of the target peer 
+		 </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">__type</span>:String</code> &mdash; the message type, see NetMessage constants
+		 </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">__content</span>:Object</code> (default = <code>null</code>)<code></code> &mdash; an object that will we sent with the message
+		 
+		 </td></tr></table></p></div><a name="start()"></a><a name="start(String,String)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">start</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function start(__port:String, __groupName:String):void</code><p></p><p></p><p>
+		 		 Starts the NetManager, the connection to the LAN and the NetGroup
+		  
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">__port</span>:String</code> (default = <code>NaN</code>)<code></code> &mdash; the network port
+		 </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">__groupName</span>:String</code> (default = <code>NaN</code>)<code></code> &mdash; the group name
+		 
+		 </td></tr></table></p></div><a name="stop()"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">stop</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function stop():void</code><p></p><p></p><p>
+		 Stop the NetManager, disconnect from the LAN and NetGroup
+		 
+		 </p></div><div class="detailSectionHeader">Constant Detail</div><a name="constantDetail"></a><a name="DEFAULT_GROUP"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">DEFAULT_GROUP</td><td class="detailHeaderType">Constant</td></tr></table><div class="detailBody"><code>public static const DEFAULT_GROUP:String = TapTabControllerGroup</code><p></p><p></p><p>
+		 the default group name 
+		 </p></div><a name="constantDetail"></a><a name="DEFAULT_PORT"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">DEFAULT_PORT</td><td class="detailHeaderType">Constant</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public static const DEFAULT_PORT:String = 3000</code><p></p><p></p><p>
+		 the default port 
+		 </p></div><br/><br/><hr><br/><p></p><center class="copyright"><footer></footer><br/>Mardi Juillet 22 2014, 05:07 PM +02:00  </center></div></body></html><!--<br/>Mardi Juillet 22 2014, 05:07 PM +02:00  -->
