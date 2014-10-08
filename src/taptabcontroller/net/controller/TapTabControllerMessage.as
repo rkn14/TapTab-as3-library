@@ -17,6 +17,7 @@ package taptabcontroller.net.controller
 	 */	
 	public class TapTabControllerMessage
 	{
+			
 		
 		/**
 		 * Received when a TapTab Controller control has changed 

@@ -20,7 +20,10 @@ package taptabcontroller.net.controller
 	{
 		
 
-		
+		/**
+		 * Dispatched when TapTab Controller is configured and ready
+		 */		
+		public static const READY : String = "TapTabControllerEvent.READY";	
 		
 		/**
 		 * Dispatched when TapTab Controller has accepted to bind

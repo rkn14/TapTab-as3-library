@@ -34,7 +34,12 @@ package taptabcontroller.net.core
 		/**
 		 * a peer accept to bind to another peer
 		 */		
-		public static const TYPE_SYSTEM_ACCEPT_BINDING 				: String = "NetMessage.TYPE_SYSTEM_ACCEPT_BINDING";		
+		public static const TYPE_SYSTEM_ACCEPT_BINDING 				: String = "NetMessage.TYPE_SYSTEM_ACCEPT_BINDING";
+		
+		/**
+		 * a peer reject to bind to another peer
+		 */		
+		public static const TYPE_BINDING_REJECTED 				: String = "NetMessage.TYPE_BINDING_REJECTED";
 		
 		/**
 		 * a peer pings another peer
@@ -60,6 +65,11 @@ package taptabcontroller.net.core
 		 * a binded peer quit connection
 		 */		
 		public static const TYPE_QUIT 								: String = "NetMessage.TYPE_QUIT";
+		
+		/**
+		 * the controller configuration is ready
+		 */		
+		public static const TYPE_CONFIGURATION_READY				: String = "NetMessage.TYPE_CONFIGURATION_READY";
 		
 		/**
 		 * a binded peer send a message to another binded peer

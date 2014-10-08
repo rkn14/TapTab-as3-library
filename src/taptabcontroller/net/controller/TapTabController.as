@@ -348,9 +348,18 @@ package taptabcontroller.net.controller
 				case NetMessage.TYPE_SYSTEM_IDENTIFY:
 									
 					break;
+				case NetMessage.TYPE_CONFIGURATION_READY:
+					dispatchEvent(new TapTabControllerEvent(TapTabControllerEvent.READY));					
+					break;
 				case NetMessage.TYPE_SYSTEM_ACCEPT_BINDING:
-					_bound = true;
-					dispatchEvent(new TapTabControllerEvent(TapTabControllerEvent.BOUND));
+					if(_taptabControllersManager.isControllerConnectionAccepted(this))
+					{
+						_bound = true;
+						dispatchEvent(new TapTabControllerEvent(TapTabControllerEvent.BOUND));
+					}else{
+						_bound = false;
+						_taptabControllersManager.rejectControllerConnection(this);
+					}
 					break;
 				case NetMessage.TYPE_SET_ACTIVATED:
 					dispatchEvent(new TapTabControllerEvent(TapTabControllerEvent.ACTIVATED));
@@ -387,7 +396,6 @@ package taptabcontroller.net.controller
 			
 			var taptabControllerMessage : TapTabControllerMessage = TapTabControllerMessage.parse(content);			
 			var evt : TapTabControllerEvent
-			
 			switch (taptabControllerMessage.type)
 			{
 				case TapTabControllerMessage.CONTROL_CHANGE:					

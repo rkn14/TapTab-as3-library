@@ -31,6 +31,30 @@ package taptabcontroller.net.controller
 	{
 		
 		
+		private var _maxConnectedControllers : int = 1;
+		/**
+		 * get the maximum number of connected controllers
+		 * 0 value means an illimited number of connected controllers
+		 * @return the maximum number of connected controllers
+		 * 
+		 */	
+		public function get maxConnectedControllers() : int
+		{
+			return _maxConnectedControllers;
+		}
+		/**
+		 * 
+		 * set the maximum number of connected controllers
+		 * 0 value means an illimited number of connected controllers
+		 * @param __value the maximum  number of connected controllers
+		 * 
+		 */	
+		public function set maxConnectedControllers(__value : int) : void
+		{
+			_maxConnectedControllers = __value;
+		}
+		
+		
 		
 		private var _taptabControllers:Vector.<TapTabController>;
 		/**
@@ -100,11 +124,12 @@ package taptabcontroller.net.controller
 		 * @param __applicationBitmap the application bitmap as a ByteArray
 		 * 
 		 */		
-		public function TapTabControllersManager(__name:String, __taptabControllersConfiguration : TapTabControllerConfigurationVO, __applicationBitmap : ByteArray = null)
+		public function TapTabControllersManager(__name:String, __taptabControllersConfiguration : TapTabControllerConfigurationVO, __applicationBitmap : ByteArray = null, __maxConnectedControllers : int = 1)
 		{
 			super(__name, PeerTypeEnum.TAPTAB_CLIENT, API.VERSION, __applicationBitmap);
-			_taptabControllersConfiguration = __taptabControllersConfiguration;			
-			_taptabControllers = new Vector.<TapTabController>();
+			_taptabControllersConfiguration = __taptabControllersConfiguration;
+			_maxConnectedControllers = __maxConnectedControllers;
+			_taptabControllers = new Vector.<TapTabController>();			
 		}
 		
 		
@@ -137,9 +162,30 @@ package taptabcontroller.net.controller
 		
 		
 		
+		public function get nbControllersCurrentlyBound() : int
+		{
+			var c : int = 0;
+			for each (var controller : TapTabController in _taptabControllers)
+			{
+				if (controller.bound)
+					c++;
+			}
+			return c;
+		}
 		
 		
+		public function isControllerConnectionAccepted(__taptabController : TapTabController) : Boolean
+		{
+			if(_maxConnectedControllers <= 0)
+				return true;
+			else
+				return (nbControllersCurrentlyBound < _maxConnectedControllers);
+		}
 		
+		public function rejectControllerConnection(__taptabController : TapTabController) : void
+		{
+			_netManager.sendMessageTo(__taptabController.peerID, NetMessage.TYPE_BINDING_REJECTED, null);
+		}
 		
 		
 		
@@ -147,6 +193,8 @@ package taptabcontroller.net.controller
 		
 		
 		// === PRIVATE =========================================================================================================
+		
+		
 		
 		
 		protected function _handler_TapTabController(__event:TapTabControllerEvent):void
@@ -158,7 +206,13 @@ package taptabcontroller.net.controller
 					// send xml configuration to taptabController, automatically
 					if(_taptabControllersConfiguration != null)
 						taptabController.sendConfiguration(_taptabControllersConfiguration);
+					taptabController.addEventListener(TapTabControllerEvent.READY, _handler_TapTabController);
 					taptabController.addEventListener(TapTabControllerEvent.QUIT, _handler_TapTabController);
+					break;
+				case TapTabControllerEvent.READY:
+					var evt : TapTabControllersManagerEvent = new TapTabControllersManagerEvent(TapTabControllersManagerEvent.NEW_TAPTABCONTROLLER);
+					evt.taptabController = taptabController;			
+					dispatchEvent(evt);			 
 					break;
 				case TapTabControllerEvent.QUIT:
 					//taptabController.disconnected();					
@@ -240,6 +294,7 @@ package taptabcontroller.net.controller
 				_taptabControllers.splice(index, 1);
 			
 			__taptabController.removeEventListener(TapTabControllerEvent.BOUND, _handler_TapTabController);
+			__taptabController.removeEventListener(TapTabControllerEvent.READY, _handler_TapTabController);
 			__taptabController.removeEventListener(TapTabControllerEvent.QUIT, _handler_TapTabController);
 			__taptabController.destroy();
 		}
@@ -250,10 +305,6 @@ package taptabcontroller.net.controller
 			_taptabControllers.push(taptabController);
 			
 			taptabController.addEventListener(TapTabControllerEvent.BOUND, _handler_TapTabController);
-			
-			var evt : TapTabControllersManagerEvent = new TapTabControllersManagerEvent(TapTabControllersManagerEvent.NEW_TAPTABCONTROLLER);
-			evt.taptabController = taptabController;			
-			dispatchEvent(evt);				
 			
 			// if bindingMode AUTO
 			if(_bindingMode == TapTabControllersManagerBindingMode.AUTO)
