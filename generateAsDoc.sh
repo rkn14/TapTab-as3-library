@@ -1,0 +1,1 @@
+/Volumes/WORK/03_COMMON_DEV/FlexSdk/4.12/bin/asdoc -source-path ./src -doc-sources ./src -window-title "TapTab Controller AS3 API" -main-title "API Documentation" -footer "" -output ./asdoc-output
