@@ -290,6 +290,7 @@ package taptabcontroller.net.controller
 		private function _removeTapTabController(__taptabController : TapTabController) : void
 		{
 			var index : int = _taptabControllers.indexOf(__taptabController);
+
 			if(index > -1)
 				_taptabControllers.splice(index, 1);
 			

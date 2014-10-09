@@ -302,6 +302,18 @@ package taptabcontroller.net.controller
 			_taptabControllersManager.sendMessageTo(_peerID, message);	
 		}
 		
+		/**
+		 * make the taptab controller vibrate 
+		 * 
+		 * @param __durationInMilliseconds the duration of the vibration in milliseconds. Minimum is 100 and maximum is 1000. On iOS the duration may not be settable...
+		 * 
+		 */		
+		public function vibrate(__durationInMilliseconds : int) : void
+		{
+			var message : TapTabClientMessage = new TapTabClientMessage(TapTabClientMessage.VIBRATE, {duration:__durationInMilliseconds});
+			_taptabControllersManager.sendMessageTo(_peerID, message);	
+		}
+		
 		
 		/**
 		 * change a taptab controller variable

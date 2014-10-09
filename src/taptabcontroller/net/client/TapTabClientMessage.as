@@ -43,6 +43,11 @@ package taptabcontroller.net.client
 		 */		
 		public static const LOAD_LAYOUT : String = "TapTabClientMessage.LOAD_LAYOUT";
 		
+		/**
+		 * tell a TapTab Controller to vibrate a short time
+		 */		
+		public static const VIBRATE : String = "TapTabClientMessage.VIBRATE";		
+		
 		
 		
 		
